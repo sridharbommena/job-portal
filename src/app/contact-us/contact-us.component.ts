@@ -9,7 +9,14 @@ export class ContactUsComponent implements OnInit {
 
   constructor() { }
 
+  success = false;
+
   ngOnInit(): void {
+  }
+
+  handleSubmit()
+  {
+    this.success = true;
   }
 
 }
