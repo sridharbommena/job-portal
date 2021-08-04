@@ -15,7 +15,7 @@ const routes: Routes = [
     component: PortalComponent
   },
   {
-    path:"job-details",
+    path:"job-details/:job_id",
     component : JobDetailsComponent,
     // pathMatch : "full"
   }

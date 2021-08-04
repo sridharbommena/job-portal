@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { posts } from '../input-data/input';
 import { post } from '../models/post';
-import { SharedService } from '../SharedService';
 
 @Component({
   selector: 'app-job-details',
@@ -10,12 +10,21 @@ import { SharedService } from '../SharedService';
 })
 export class JobDetailsComponent implements OnInit {
 
-  constructor(private sharedService:SharedService) { }
+  constructor(private router:ActivatedRoute) { }
 
   post:post = undefined;
+  post_id = undefined;
 
   ngOnInit(): void {
-    this.post = this.sharedService.getPostData();
+    this.post_id = this.router.snapshot.paramMap.get("job_id");
+    posts.forEach(post => {
+      if(post.id==this.post_id)
+      {
+        this.post = post;
+      }  
+    });
+
+    console.log(this.post);
   }
 
 }
