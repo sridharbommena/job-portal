@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { post } from './models/post';
+import { post } from '../models/post';
+import { SharedService } from '../SharedService';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-portal',
+  templateUrl: './portal.component.html',
+  styleUrls: ['./portal.component.css']
 })
-export class AppComponent implements OnInit {
-  
-  constructor(private router:Router) { }
+export class PortalComponent implements OnInit {
+
+  constructor(private router:Router,private sharedService:SharedService) { }
 
   posts:post[] = [];
   dummyPost:post = Object.create(
@@ -33,8 +34,8 @@ export class AppComponent implements OnInit {
 
   handleClick(post:post)
   {
-    this.router.navigate(['/job-details',post]);
+    this.sharedService.setPostData(post);
+    this.router.navigate(["/job-details"]);
   }
 
-  
 }
