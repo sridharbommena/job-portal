@@ -3,6 +3,7 @@ import { post } from "../models/post";
 export const posts:post[] = [
     {
         id : 1,
+        post_date: "July 31, 2021",
         semi_heading: "Capgemini Off Campus Drive",
         heading: "Capgemini Off Campus Drive 2021 for SAP | B.E/B.Tech | 2019/2020 Batch | Across India",
         description: "Capgemini scheduled to hire for the role of SAP – SD  and SAP – MM for B.E/ B.Tech graduates – 2019/ 2020 batch. The detailed eligibility and application process are given below.",
@@ -46,6 +47,7 @@ export const posts:post[] = [
     },
     {
         id : 2,
+        post_date: "July 31, 2021",
         semi_heading: "Accenture Off Campus Event 2021",
         heading: "Accenture Off Campus Drive 2021 | B.E/B.Tech/M.E/M.Tech/MCA/M.Sc/B.Sc/BCA | 2019/2020/2021 Batch | Across India",
         description: "Accenture Solutions Pvt Ltd planned to conduct Off Campus Drive to hire B.E/B.Tech/M.E/M.Tech/MCA/M.Sc & B.Sc/BCA 2019,2020,2021 Batch graduates. The more details about Accenture off campus drive given below.",

@@ -8,6 +8,7 @@ export interface post
     // original_apply_link:string;
     // date:string;
         id : number;
+        post_date:string;
         semi_heading: string;
         heading: string;
         description: string;

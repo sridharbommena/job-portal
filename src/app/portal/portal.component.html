@@ -4,7 +4,7 @@
             <div *ngFor="let post of posts" class="col">
                 <div class="card h-100 shadow"> <img [src]="post.img_url" class="card-img-top" alt="post image">
                     <div class="card-body">
-                        <!-- for displaying dates <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary"></span> <span class="float-end price-hp">{{post.date}}</span> </div> -->
+                        <!-- <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary"></span> <span class="float-end price-hp">{{post.post_date}}</span> </div> -->
                         <h5 class="card-title">{{post.heading}}</h5>
                         <p class="card-title">{{post.description}}</p>
                         <div class="text-center my-4"> <a (click)="handleClick(post.id)" class="btn btn-warning">View Details</a> </div>
@@ -13,4 +13,4 @@
             </div>
         </div>
     </div>
-  </main>
+</main>

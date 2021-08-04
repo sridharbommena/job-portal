@@ -1,7 +1,92 @@
 <main>
-    <div class="container">
-        <header>
-            <h3 class="display-6">{{post.heading}}</h3>
-        </header>
+    <div *ngIf="post" class="container">
+        <br>
+        <div>
+            <h2 *ngIf="post.heading" >{{post.heading}}</h2>
+        </div>
+        <p *ngIf="post.post_date" class="text-secondary">{{post.post_date}}</p>
+        <div class="d-flex justify-content-center">
+            <img *ngIf="post.img_url" [src]="post.img_url" alt="https://via.placeholder.com/250" >
+        </div>
+        <br>
+        <div class="container">
+            <b *ngIf="post.semi_heading" style="display: inline;">{{post.semi_heading}} - </b>
+            <p *ngIf="post.description" style="display: inline;">{{post.description}}</p>
+        </div>
+        <br><br>
+        <h4 *ngIf="post.semi_heading" >{{post.semi_heading}} for {{post.job_role}}: </h4>
+        <br>
+        <div class="table-responsive-md">
+        <table class="table table-bordered w-25 p-3">
+            <tbody>
+              <tr *ngIf="post.job_role">
+                <th scope="row">Job Role</th>
+                <td>{{post.job_role}}</td>
+              </tr>
+              <tr *ngIf="post.qualification">
+                <th scope="row">Qualification</th>
+                <td>{{post.qualification}}</td>
+              </tr>
+              <tr *ngIf="post.batch">
+                <th scope="row">Batch</th>
+                <td>{{post.batch}}</td>
+              </tr>
+              <tr *ngIf="post.experience">
+                <th scope="row">Experience</th>
+                <td>{{post.experience}}</td>
+              </tr>
+              <tr *ngIf="post.salary">
+                <th scope="row">Salary</th>
+                <td>{{post.salary}}</td>
+              </tr>
+              <tr *ngIf="post.job_location">
+                <th scope="row">Job Location</th>
+                <td>{{post.job_location}}</td>
+              </tr>
+              <tr *ngIf="post.drive_location">
+                <th scope="row">Drive Location</th>
+                <td>{{post.drive_location}}</td>
+              </tr>
+              <tr *ngIf="post.drive_date">
+                <th scope="row">Drive Date</th>
+                <td>{{post.drive_date}}</td>
+              </tr>
+              <tr *ngIf="post.last_date">
+                <th scope="row">Drive Date</th>
+                <td>{{post.last_date}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <div *ngIf="post.detailed_eligibility">
+            <h4>Detailed Eligibility:</h4>
+            <ul>
+                <li *ngFor="let item of post.detailed_eligibility">{{item}}</li>
+            </ul>
+        </div>
+        <br>
+        <div *ngIf="post.professional_experience">
+            <h4>Professional Experience:</h4>
+            <ul>
+                <li *ngFor="let item of post.professional_experience">{{item}}</li>
+            </ul>
+        </div>
+        <br>
+        <div *ngIf="post.skills">
+            <h4>Required Skills:</h4>
+            <ul>
+                <li *ngFor="let item of post.skills">{{item}}</li>
+            </ul>
+        </div>
+        <br>
+        <div *ngIf="post.job_description">
+            <h4>Job Description:</h4>
+            <b>As a {{post.job_role}} you should</b>
+            <ul>
+                <li *ngFor="let item of post.job_description">{{item}}</li>
+            </ul>
+        </div>
+        <b>To Apply <a style="text-decoration: none;" target="_blank" [href]="post.apply_link">Click here</a></b>
     </div>
 </main>

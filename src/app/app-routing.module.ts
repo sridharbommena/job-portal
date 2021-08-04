@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { PortalComponent } from './portal/portal.component';
 
@@ -18,6 +19,10 @@ const routes: Routes = [
     path:"job-details/:job_id",
     component : JobDetailsComponent,
     // pathMatch : "full"
+  },
+  {
+    path: "contact",
+    component: ContactUsComponent
   }
 
 ];
