@@ -97,6 +97,7 @@ form .icon {
 }
 .btn.btn-primary {
     font-family: 'Quicksand', sans-serif;
+    margin-top: 15px;
     font-weight: bold;
     height: 2.5rem;
     line-height: 2.5rem;
