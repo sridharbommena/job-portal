@@ -45,6 +45,25 @@ svg {
         opacity: 1;
    }
 }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) 
+{ 
+    svg
+    {
+        display: inline-block;
+    }
+}
+@media (max-width: 992px) 
+{ 
+    svg
+    {
+        display: none;
+    }
+}
+
+
+
 .container {
     height: 100vh;
 }

@@ -16,6 +16,14 @@ export class PortalComponent implements OnInit {
 
   ngOnInit(): void {
     this.posts = posts;
+    this.posts.sort(function(a, b) {
+      var keyA = new Date(a.post_date),
+        keyB = new Date(b.post_date);
+      // Compare the 2 dates
+      if (keyA < keyB) return 1;
+      if (keyA > keyB) return -1;
+      return 0;
+    });
   }
 
   handleClick(job_id:number)

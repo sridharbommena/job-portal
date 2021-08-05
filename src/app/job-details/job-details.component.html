@@ -88,5 +88,25 @@
             </ul>
         </div>
         <b>To Apply <a style="text-decoration: none;" target="_blank" [href]="post.apply_link">Click here</a></b>
+        <hr>
+        <br>
+        <div *ngIf="isSimilarpostsAvailable">
+            <h4>Recent Posts:</h4>
+            <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+              <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+                  <div *ngFor="let sim_post of sim_posts" class="col">
+                      <div class="card h-100 shadow"> <img [src]="sim_post.img_url" class="card-img-top" alt="sim_post image">
+                          <div class="card-body">
+                              <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary"></span> <span class="float-end price-hp">{{sim_post.post_date}}</span> </div>
+                              <h5 class="card-title">{{sim_post.heading}}</h5>
+                              <p class="card-title">{{sim_post.description}}</p>
+                              <div class="text-center my-4"> <a (click)="handleClick(sim_post.id)" class="btn btn-warning">View Details</a> </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
     </div>
 </main>

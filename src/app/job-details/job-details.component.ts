@@ -14,6 +14,9 @@ export class JobDetailsComponent implements OnInit {
 
   post:post = undefined;
   post_id = undefined;
+  sim_posts:post[] = undefined;
+  isSimilarpostsAvailable=false;
+  temp_posts:post[] = undefined;
 
   ngOnInit(): void {
     this.post_id = this.router.snapshot.paramMap.get("job_id");
@@ -23,8 +26,18 @@ export class JobDetailsComponent implements OnInit {
         this.post = post;
       }  
     });
+    // console.log(this.post);
 
-    console.log(this.post);
+    this.temp_posts = posts;
+    this.sim_posts = this.temp_posts.sort(function(a, b) {
+      var keyA = new Date(a.post_date),
+        keyB = new Date(b.post_date);
+      // Compare the 2 dates
+      if (keyA < keyB) return 1;
+      if (keyA > keyB) return -1;
+      return 0;
+    }).slice(0,4);
+    this.isSimilarpostsAvailable = true;
   }
 
 }
